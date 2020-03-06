@@ -1,0 +1,209 @@
+**********************************************************
+| COURSE                                                 |
+----------------------------------------------------------
+| CNUM      | TITLE                           | CREDITS  |
+----------------------------------------------------------
+| CSCI141   | COMPUTER PROGRAMMING I          | 4        |
+| CSCI145   | COMP PROG & LINEAR DATA STRUCT  | 4        |
+| CSCI241   | DATA STRUCTURES                 | 4        |
+| CSCI301   | FORMAL LANGUAGES                | 5        |
+| CSCI305   | ALGORITHMS                      | 4        |
+| CSCI330   | DATABASE SYSTEMS                | 4        |
+| CSCI345   | OBJECT ORIENTED DESIGN          | 4        |
+**********************************************************
+
+
+***********************************************************************************************
+| OFFERING                                                                                    |
+-----------------------------------------------------------------------------------------------
+| CNUM      | SECTION  | STARTHOUR  | ENDHOUR  | DAYS   | ROOM        | INSTRUCTOR            |
+-----------------------------------------------------------------------------------------------
+| CSCI141   | 27921    | 13:00      | 13:50    | MWF    | CF115       | JAGODZINSKI           |
+| CSCI241   | 27922    | 9:00       | 9:50     | MWF    | AW205       | ISLAM                 |
+| CSCI241   | 27935    | 11:00      | 11:50    | MWF    | AW403       | BOVER                 |
+| CSCI305   | 27950    | 14:00      | 14:50    | MTWF   | AW403       | LIU                   |
+| CSCI330   | 27974    | 12:00      | 12:50    | MTWF   | CF314       | DENEKE                |
+| CSCI330   | 27977    | 14:00      | 14:50    | MTWF   | CF316       | DENEKE                |
+***********************************************************************************************
+
+
+*************************
+| PREREQ                |
+-------------------------
+| CNUM      | PNUM      |
+-------------------------
+| CSCI141   | MATH112   |
+| CSCI145   | MATH115   |
+| CSCI145   | CSCI141   |
+| CSCI241   | MATH124   |
+| CSCI241   | CSCI145   |
+| CSCI301   | CSCI145   |
+| CSCI305   | CSCI301   |
+| CSCI305   | CSCI241   |
+| CSCI330   | CSCI241   |
+| CSCI345   | CSCI241   |
+*************************
+
+
+***************************************************************************
+| STAFF                                                                   |
+---------------------------------------------------------------------------
+| NAME                  | SPOUSE      | RANK   | CAMPUSADDR  | EXTENSION  |
+---------------------------------------------------------------------------
+| GREGORY               | DON         | SEC    | A8C         | 0030       |
+| DENEKE                | WHO         | ASSIS  | CF 479      | 3769       |
+***************************************************************************
+
+
+***********************************************************
+| INTERESTS                                               |
+-----------------------------------------------------------
+| NAME                  | INTEREST                        |
+-----------------------------------------------------------
+| DENEKE                | AI                              |
+| DENEKE                | VIRTUAL WORLDS                  |
+***********************************************************
+
+
+*********************************
+| DEPT                          |
+---------------------------------
+| NAME                  | DEPT  |
+---------------------------------
+| DENEKE                | CSCI  |
+| ISLAM                 | CSCI  |
+| GREGORY               | MATH  |
+*********************************
+
+
+Failed to run command for reason "illegal argument thrown in RelationCommand: relation already exists in the database".
+	Command: RELATION COURSE (HONEY_DISTRICT CHAR 8, HIVE_NAME CHAR 30, BEE_COUNT NUM 4);
+Failed to run command for reason "illegal argument thrown in InsertCommand: relation does not exist".
+	Command: INSERT BEE_COURSES CSCI141 'COMPUTER PROGRAMMING I' 4;
+Failed to run command for reason "illegal argument thrown in PrintCommand: relation does not exist".
+	Command: PRINT BEES;
+Failed to run command for reason "illegal argument thrown in PrintCommand: invalid syntax".
+	Command: PRINT 'BEES ARE BUZZING';
+Failed to run command for reason "illegal argument thrown in DestroyCommand: invalid syntax".
+	Command: DESTROY 'THE ENEMIES OF BEES';
+Failed to run command for reason "illegal argument thrown in DestroyCommand: relation does not exist".
+	Command: DESTROY BUZZ;
+Failed to run command for reason "illegal argument thrown in RelationCommand: relation already exists in the database".
+	Command: RELATION CATALOG (BEE CHAR 1);
+Failed to run command for reason "illegal argument thrown in InsertCommand: cannot insert into catalog".
+	Command: INSERT CATALOG FIVE_BEES 5;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: cannot delete catalog".
+	Command: DELETE CATALOG;
+Failed to run command for reason "not a recognized command".
+	Command: destroy CATALOG;
+***************************************************************************
+| STAFF                                                                   |
+---------------------------------------------------------------------------
+| NAME                  | SPOUSE      | RANK   | CAMPUSADDR  | EXTENSION  |
+---------------------------------------------------------------------------
+| GREGORY               | DON         | SEC    | A8C         | 0030       |
+| DENEKE                | WHO         | ASSIS  | CF 479      | 3769       |
+***************************************************************************
+
+
+***************************************************************************
+| STAFF                                                                   |
+---------------------------------------------------------------------------
+| NAME                  | SPOUSE      | RANK   | CAMPUSADDR  | EXTENSION  |
+---------------------------------------------------------------------------
+***************************************************************************
+
+
+Failed to run command for reason "not a recognized command".
+	Command: destroy STAFF;
+Failed to run command for reason "not a recognized command".
+	Command: PRint STAFF;
+Failed to run command for reason "illegal argument thrown in RelationCommand: invalid syntax".
+	Command: RELATION KING_OF_BEES (BEE_COUNT BEES 63);
+Failed to run command for reason "illegal argument thrown in RelationCommand: invalid syntax".
+	Command: RELATION KING_OF_BEES (BEE_COUNT NUM bzz);
+Failed to run command for reason "illegal argument thrown in RelationCommand: relation already exists in the database".
+	Command: RELATION KING_OF_BEES (NAME CHAR 31, YEARS_AS_KING NUM 15, SOLDIER_COUNT NUM 15);
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid attribute type (expected num, got Bee)".
+	Command: INSERT KING_OF_BEES 999 Bee Bee;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid tuple size: expected: 3, actual: 7".
+	Command: INSERT KING_OF_BEES Bee 999 BeeINSERT KING_OF_BEES Bee Bee 999;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid attribute type (expected num, got Bee)".
+	Command: INSERT KING_OF_BEES Bee 999 Bee;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid attribute type (expected num, got Bee)".
+	Command: INSERT KING_OF_BEES Bee Bee 999;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid tuple size: expected: 3, actual: 1".
+	Command: INSERT KING_OF_BEES Spy;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid tuple size: expected: 3, actual: 9".
+	Command: INSERT KING_OF_BEES 1 2 3 4 5 6 7 8 9;
+**************************************************************************
+| KING_OF_BEES                                                           |
+--------------------------------------------------------------------------
+| NAME                             | YEARS_AS_KING    | SOLDIER_COUNT    |
+--------------------------------------------------------------------------
+| "King" Buzzphrey                 | 3548453400       | 2                |
+| John                             | 4                | 935684131645687  |
+| Beelzebub                        | -1               | -1               |
+| b u z z z z z z z z z z z z z z  | 412              | 0                |
+**************************************************************************
+
+
+**************************************************************************
+| KING_OF_BEES                                                           |
+--------------------------------------------------------------------------
+| NAME                             | YEARS_AS_KING    | SOLDIER_COUNT    |
+--------------------------------------------------------------------------
+| "King" Buzzphrey                 | 3548453400       | 2                |
+| John                             | 4                | 935684131645687  |
+| Beelzebub                        | -1               | -1               |
+| b u z z z z z z z z z z z z z z  | 412              | 0                |
+**************************************************************************
+
+
+*******************************************************
+| HERO_OF_THE_BEES                                    |
+-------------------------------------------------------
+| NAME                             | APPROVAL_RATING  |
+-------------------------------------------------------
+*******************************************************
+
+
+********************************************
+| CATALOG                                  |
+--------------------------------------------
+| RELATION                   | ATTRIBUTES  |
+--------------------------------------------
+| COURSE                     | 3           |
+| PREREQ                     | 2           |
+| OFFERING                   | 7           |
+| STAFF                      | 5           |
+| INTERESTS                  | 2           |
+| DEPT                       | 2           |
+| KING_OF_BEES               | 3           |
+| HERO_OF_THE_BEES           | 2           |
+********************************************
+
+
+Failed to run command for reason "illegal argument thrown in DestroyCommand: relation does not exist".
+	Command: DESTROY PREREQ;
+Failed to run command for reason "illegal argument thrown in DestroyCommand: relation does not exist".
+	Command: DESTROY PREREQ;
+********************************************
+| CATALOG                                  |
+--------------------------------------------
+| RELATION                   | ATTRIBUTES  |
+--------------------------------------------
+| COURSE                     | 3           |
+| OFFERING                   | 7           |
+| STAFF                      | 5           |
+| INTERESTS                  | 2           |
+| DEPT                       | 2           |
+| KING_OF_BEES               | 3           |
+| HERO_OF_THE_BEES           | 2           |
+********************************************
+
+
+Failed to run command for reason "illegal argument thrown in RelationCommand: invalid syntax".
+	Command: RELATION EMPTY_HIVE ();
+Failed to run command for reason "not a recognized command".
+	Command: BUZZ BEES;

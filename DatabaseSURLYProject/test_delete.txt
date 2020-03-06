@@ -1,0 +1,51 @@
+# testing for DELETE
+# problems tested: delete from a relation that doesn't exist, delete from multiple relations,
+# delete from catalog, delete with no arguments, delete with no arguments with a space,
+# delete with empty where, delete with multiple where conditions, delete with invalid attribute in where,
+# delete with quoted value in where
+# delete a temp relation
+
+RELATION BEEHIVE(BEE_ID NUM 10, FLOWER CHAR 10, HONEY NUM 10);
+RELATION APARTMENT(PERSON_NAME CHAR 12, ADDRESS CHAR 23);
+INSERT APARTMENT CORBEN 'BEEWARE ROAD';
+INSERT APARTMENT CORBZZZN 'BZZZZZWARZZ ROAD';
+INSERT BEEHIVE 124 tulip 3;
+INSERT BEEHIVE 23453 daffodil 23;
+INSERT BEEHIVE 274563 sunflower 98;
+
+PRINT APARTMENT, BEEHIVE;
+
+
+MyRelation = PROJECT BEE_ID FROM BEEHIVE;
+PRINT MyRelation;
+
+DELETE MyRelation;
+
+DELETE HOUSE APARTMENT;
+DELETE APARTMENT BEEHIVE;
+
+DELETE BEEHIVE WHERE HONEY < 20 AND FLOWER = SUNFLOWER;
+PRINT BEEHIVE;
+
+DELETE BEEHIVE WHERE HONEY < 20 OR BEE_ID = 23453 AND FLOWER != sunflower;
+PRINT BEEHIVE;
+
+DELETE BEEHIVE;
+PRINT BEEHIVE;
+
+PRINT APARTMENT;
+
+DELETE APARTMENT WHERE;
+DELETE APARTMENT WHERE MY_NEW_FAKE_ATTRIBUTE = anything;
+
+DELETE APARTMENT WHERE PERSON_NAME = 'CORBEN';
+PRINT APARTMENT;
+
+PRINT CATALOG;
+DELETE CATALOG;
+
+DELETE NONBEES;
+
+DELETE;
+DELETE ;
+

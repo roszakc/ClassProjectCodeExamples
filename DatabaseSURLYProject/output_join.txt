@@ -1,0 +1,104 @@
+**********************************************************
+| COURSE                                                 |
+----------------------------------------------------------
+| CNUM      | TITLE                           | CREDITS  |
+----------------------------------------------------------
+| CSCI301   | FORMAL LANGUAGES                | 5        |
+| CSCI305   | ALGORITHMS                      | 4        |
+| CSCI330   | DATABASE SYSTEMS                | 4        |
+| CSCI345   | OBJECT ORIENTED DESIGN          | 4        |
+**********************************************************
+
+
+*************************
+| PREREQ                |
+-------------------------
+| CNUM      | PNUM      |
+-------------------------
+| CSCI141   | MATH112   |
+| CSCI145   | MATH115   |
+| CSCI145   | CSCI141   |
+| CSCI241   | MATH124   |
+| CSCI241   | CSCI145   |
+| CSCI301   | CSCI145   |
+| CSCI305   | CSCI301   |
+| CSCI305   | CSCI241   |
+| CSCI330   | CSCI241   |
+| CSCI345   | CSCI241   |
+*************************
+
+
+********************************************
+| CATALOG                                  |
+--------------------------------------------
+| RELATION                   | ATTRIBUTES  |
+--------------------------------------------
+| COURSE                     | 3           |
+| PREREQ                     | 2           |
+********************************************
+
+
+Failed to run command for reason "illegal argument thrown in JoinCommand: CNUM is ambiguous".
+	Command: J1 = JOIN COURSE, PREREQ ON CNUM = CNUM;
+COURSE.CNUM | CNUM
+Failed to run command for reason "illegal argument thrown in JoinCommand: attribute not found in tuple".
+	Command: J4 = JOIN COURSE, PREREQ ON COURSE.CNUM = CNUM;
+CNUM | COURSE.CNUM
+Failed to run command for reason "illegal argument thrown in JoinCommand: attribute not found in tuple".
+	Command: J6 = JOIN COURSE, PREREQ ON CNUM = COURSE.CNUM;
+Failed to run command for reason "illegal argument thrown in JoinCommand: condition does not have 3 elements: AND".
+	Command: J8 = JOIN COURSE, PREREQ ON CNUM = COURSE.CNUM AND PNUM = CNUM;
+CNUM | CNUM
+**************************************************************************************************
+| J2                                                                                             |
+--------------------------------------------------------------------------------------------------
+| COURSE.CNUM  | COURSE.TITLE                    | COURSE.CREDITS  | PREREQ.CNUM  | PREREQ.PNUM  |
+--------------------------------------------------------------------------------------------------
+| CSCI301      | FORMAL LANGUAGES                | 5               | CSCI301      | CSCI145      |
+| CSCI305      | ALGORITHMS                      | 4               | CSCI305      | CSCI301      |
+| CSCI305      | ALGORITHMS                      | 4               | CSCI305      | CSCI241      |
+| CSCI330      | DATABASE SYSTEMS                | 4               | CSCI330      | CSCI241      |
+| CSCI345      | OBJECT ORIENTED DESIGN          | 4               | CSCI345      | CSCI241      |
+**************************************************************************************************
+
+
+CNUM | CNUM
+**************************************************************************************************
+| J3                                                                                             |
+--------------------------------------------------------------------------------------------------
+| COURSE.CNUM  | COURSE.TITLE                    | COURSE.CREDITS  | PREREQ.CNUM  | PREREQ.PNUM  |
+--------------------------------------------------------------------------------------------------
+| CSCI301      | FORMAL LANGUAGES                | 5               | CSCI301      | CSCI145      |
+| CSCI305      | ALGORITHMS                      | 4               | CSCI305      | CSCI301      |
+| CSCI305      | ALGORITHMS                      | 4               | CSCI305      | CSCI241      |
+| CSCI330      | DATABASE SYSTEMS                | 4               | CSCI330      | CSCI241      |
+| CSCI345      | OBJECT ORIENTED DESIGN          | 4               | CSCI345      | CSCI241      |
+**************************************************************************************************
+
+
+CNUM | CNUM
+**************************************************************************************************
+| J5                                                                                             |
+--------------------------------------------------------------------------------------------------
+| COURSE.CNUM  | COURSE.TITLE                    | COURSE.CREDITS  | PREREQ.CNUM  | PREREQ.PNUM  |
+--------------------------------------------------------------------------------------------------
+| CSCI301      | FORMAL LANGUAGES                | 5               | CSCI301      | CSCI145      |
+| CSCI305      | ALGORITHMS                      | 4               | CSCI305      | CSCI301      |
+| CSCI305      | ALGORITHMS                      | 4               | CSCI305      | CSCI241      |
+| CSCI330      | DATABASE SYSTEMS                | 4               | CSCI330      | CSCI241      |
+| CSCI345      | OBJECT ORIENTED DESIGN          | 4               | CSCI345      | CSCI241      |
+**************************************************************************************************
+
+
+CNUM | CNUM
+**************************************************************************************************
+| J7                                                                                             |
+--------------------------------------------------------------------------------------------------
+| COURSE.CNUM  | COURSE.TITLE                    | COURSE.CREDITS  | PREREQ.CNUM  | PREREQ.PNUM  |
+--------------------------------------------------------------------------------------------------
+| CSCI301      | FORMAL LANGUAGES                | 5               | CSCI301      | CSCI145      |
+| CSCI305      | ALGORITHMS                      | 4               | CSCI305      | CSCI301      |
+| CSCI305      | ALGORITHMS                      | 4               | CSCI305      | CSCI241      |
+| CSCI330      | DATABASE SYSTEMS                | 4               | CSCI330      | CSCI241      |
+| CSCI345      | OBJECT ORIENTED DESIGN          | 4               | CSCI345      | CSCI241      |
+**************************************************************************************************

@@ -1,0 +1,61 @@
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid tuple size: expected: 3, actual: 4".
+	Command: INSERT BEEHIVE 124 tulip 3 6783;
+Failed to run command for reason "illegal argument thrown in InsertCommand: relation does not exist".
+	Command: INSERT HOUSE BUZZER;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid syntax".
+	Command: INSERT HOUSE;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid tuple size: expected: 3, actual: 2".
+	Command: INSERT BEEHIVE 9823 ROSE;
+Failed to run command for reason "illegal argument thrown in InsertCommand: cannot insert into catalog".
+	Command: INSERT CATALOG BEES 999;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid syntax".
+	Command: INSERT BEEHIVE;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid syntax".
+	Command: INSERT;
+Failed to run command for reason "illegal argument thrown in InsertCommand: invalid attribute type (expected num, got notn)".
+	Command: INSERT BEEHIVE 0 azalea notnum;
+**************************************
+| BEEHIVE                            |
+--------------------------------------
+| BEE_ID      | FLOWER      | HONEY  |
+--------------------------------------
+| 23453       | daffodil    | 2373   |
+| 23453       | daffodil    | 2373   |
+| 274563      | sunflower   | 98     |
+| 7463        | dandelion   | 9883   |
+**************************************
+
+
+********************************************
+| APARTMENT                                |
+--------------------------------------------
+| PERSON_NAME   | ADDRESS                  |
+--------------------------------------------
+| CORBEN        | BEEWARE ROAD             |
+| buzzbee       | there                    |
+********************************************
+
+
+***************
+| MyRelation  |
+---------------
+| BEE_ID      |
+---------------
+| 23453       |
+| 274563      |
+| 7463        |
+***************
+
+
+Failed to run command for reason "illegal argument thrown in InsertCommand: cannot insert into a temporary relation".
+	Command: INSERT MyRelation 1234;
+***************
+| MyRelation  |
+---------------
+| BEE_ID      |
+---------------
+| 23453       |
+| 274563      |
+| 7463        |
+***************
+

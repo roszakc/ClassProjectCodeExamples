@@ -1,0 +1,26 @@
+# testing for RELATION
+# problems tested: creating catalog, creating duplicate, creating relation with duplicate name,
+# creating with invalid type, creating with negative length, creating with attributes with duplicate names
+# overwriting temporary relations with a base relation
+
+RELATION CATALOG (BUZZ CHAR 1);
+RELATION BUZZALONG (BUZZ CHAR 1);
+RELATION BUZZALONG (BUZZ CHAR 1);
+RELATION BUZZALONG (BEES NUM 10);
+RELATION HIVE (BEES BUZZ 5);
+RELATION HIVE (BEES NUM -5);
+RELATION BEE_WAR (BEES NUM 8, BEES NUM 16);
+RELATION BEE_WAR (HIVE_1_BEES NUM 8, HIVE_2_BEES NUM 8, HIVE_3_BEES NUM 8, HIVE_4_BEES NUM 8, HIVE_5_BEES NUM 8);
+RELATION BEE_TEMPLATE (NAME CHAR 12, STRIPES NUM 3);
+
+PRINT CATALOG;
+
+INSERT BEE_TEMPLATE tester 9;
+
+MyRelation = PROJECT NAME FROM BEE_TEMPLATE;
+PRINT MyRelation;
+
+RELATION MyRelation (BEES NUM 8, KNEES NUM 16);
+
+PRINT MyRelation;
+

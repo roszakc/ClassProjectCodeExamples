@@ -1,0 +1,26 @@
+# testing for PROJECT
+# problems tested: projecting only distinct tuples
+#                  projecting multiple columns with distinct values
+#                  projecting relations that don't exist
+#
+
+
+RELATION BEEHIVE(BEE_ID NUM 10, FLOWER CHAR 10, HONEY NUM 4);
+INSERT BEEHIVE 124 tulip 36783;
+INSERT BEEHIVE 23453 daffodil 237363;
+INSERT BEEHIVE 23 daffodil 237363;
+INSERT BEEHIVE 274563 sunflower 98;
+
+PRINT BEEHIVE;
+
+MyRelation = PROJECT FLOWER FROM BEEHIVE;
+
+PRINT MyRelation;
+
+MyRelation = PROJECT FLOWER, BEE_ID FROM BEEHIVE;
+
+PRINT MyRelation;
+
+MyRelation = PROJECT F FROM BEEHIVE;
+
+MyRelation = PROJECT FLOWER FROM B;

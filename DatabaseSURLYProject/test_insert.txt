@@ -1,0 +1,29 @@
+# testing for INSERT
+# problems tested: inserting duplicate tuple, inserting with too many args, inserting with too few args,
+# inserting to catalog, inserting to a relation that does not exist, inserting with no arguments,
+# inserting with only a relation name, inserting with redundant quotes, inserting with wrong type,
+# inserting with argument length greater than allowed
+
+RELATION BEEHIVE(BEE_ID NUM 10, FLOWER CHAR 10, HONEY NUM 4);
+RELATION APARTMENT(PERSON_NAME CHAR 12, ADDRESS CHAR 23);
+INSERT APARTMENT CORBEN 'BEEWARE ROAD';
+INSERT BEEHIVE 124 tulip 3 6783;
+INSERT BEEHIVE 23453 daffodil 237363;
+INSERT BEEHIVE 23453 daffodil 237363;
+INSERT BEEHIVE 274563 sunflower 98;
+INSERT BEEHIVE 7463 dandelion 98836284643;
+INSERT HOUSE BUZZER;
+INSERT HOUSE;
+INSERT BEEHIVE 9823 ROSE;
+INSERT CATALOG BEES 999;
+INSERT BEEHIVE;
+INSERT;
+INSERT APARTMENT 'buzzbee' there;
+INSERT BEEHIVE 0 azalea notnum;
+
+PRINT BEEHIVE, APARTMENT;
+
+MyRelation = PROJECT BEE_ID FROM BEEHIVE;
+PRINT MyRelation;
+INSERT MyRelation 1234;
+PRINT MyRelation;

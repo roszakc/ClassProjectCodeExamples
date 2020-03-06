@@ -1,0 +1,34 @@
+# testing for WHERE
+# not really an official test
+# used to test tree structure for order of ops, operators, and general parsing
+
+DELETE KING_OF_THE_BEES WHERE Name != 'Buzzbee' OR Salary <= 100000; # basic testing to see if or works
+DELETE HONEYCOMB WHERE all_the_honey_is_in_this_comb = TRUE Or honey_count < TRUE; # test case sensitivity (should be insensitive)
+DELETE HONEY_COLLECTION_SITES WHERE ENVIRONMENT = 'SLIMEY' OR POLLENATION < 20 and MyNamesBuzzbee = FALSE; # test multiple entries
+DELETE BEES_SOUNDS WHERE s1 = buzz or s2 = buzz and s3 = buzz and s4 = buzz or s5 = buzz or s6 = buzz and s7 = buzz or s8 = buzz; # testing tree structure
+
+RELATION BEEHIVE(BEE_ID NUM 10, FLOWER CHAR 10, HONEY NUM 10);
+RELATION OTHERHIVE(BEE_ID NUM 10, FLOWER CHAR 10, HONEY NUM 10);
+RELATION APARTMENT(PERSON_NAME CHAR 12, ADDRESS CHAR 23);
+INSERT APARTMENT CORBEN 'BEEWARE ROAD';
+INSERT BEEHIVE 124 tulip 3;
+INSERT BEEHIVE 23453 daffodil 23;
+INSERT BEEHIVE 274563 sunflower 98;
+INSERT OTHERHIVE 124 tulip 32;
+INSERT OTHERHIVE 23453 daffodil 233;
+INSERT OTHERHIVE 274563 sunflower 985;
+
+
+THEBUZZ = JOIN BEEHIVE, OTHERHIVE ON BEEHIVE.BEE_ID = OTHERHIVE.BEE_ID;
+
+PRINT THEBUZZ;
+
+DELETE THEBUZZ WHERE FLOWER = TULIP;
+
+PRINT BEEHIVE;
+
+DELETE BEEHIVE WHERE HONEY < 30;
+
+PRINT BEEHIVE;
+
+

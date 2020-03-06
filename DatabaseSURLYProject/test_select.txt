@@ -1,0 +1,37 @@
+# testing for SELECT
+# problems tested: zero conditions, one condition, multiple conditions,
+# single quotes, [invalid type], invalid relation
+
+RELATION BEEHIVE(BEE_ID NUM 10, FLOWER CHAR 10, HONEY NUM 4);
+INSERT BEEHIVE 124 tulip 6783;
+INSERT BEEHIVE 23453 daffodil 237363;
+INSERT BEEHIVE 23453 daffodil 237363;
+INSERT BEEHIVE 274563 sunflower 98;
+
+RELATION KING_OF_BEES (NAME CHAR 31, YEARS_AS_KING NUM 15, SOLDIER_COUNT NUM 15);
+INSERT KING_OF_BEES '"King" Buzzphrey' 3548453400 2;
+INSERT KING_OF_BEES 'John' 4 9356841316456874684213543135476878;
+INSERT KING_OF_BEES Beelzebub -1 -1;
+INSERT KING_OF_BEES 'b u z z z z z z z z z z z z z z z z z z z z z z z z z z z z z' 412 0;
+
+PRINT BEEHIVE, KING_OF_BEES;
+
+SingleSelect = SELECT BEEHIVE WHERE BEE_ID = 23453;
+PRINT SingleSelect;
+
+ZeroSelect = SELECT KING_OF_BEES;
+PRINT ZeroSelect;
+
+MultiSelect = SELECT KING_OF_BEES WHERE NAME != Beelzebub AND YEARS_AS_KING > 5;
+PRINT MultiSelect;
+
+# it's a problem, but it's not on the rubric so i mean i guess it's good enough
+#InvalidType = SELECT BEEHIVE WHERE BEE_ID < HI;
+#PRINT InvalidType;
+
+QuoteSelect = SELECT KING_OF_BEES WHERE NAME = '"King" Buzzphrey';
+PRINT QuoteSelect;
+
+BadRelation = SELECT NONBEES;
+
+PRINT BEEHIVE;

@@ -1,0 +1,43 @@
+# testing for DESTROY
+# problems tested: destroy a relation that doesn't exist, destroy catalog, destroy with no arguments
+# (delete and destroy should function very similarly)
+# cannot destroy a temporary relation
+
+RELATION BEEHIVE(BEE_ID NUM 10, FLOWER CHAR 10, HONEY NUM 10);
+INSERT BEEHIVE 124 tulip 3;
+INSERT BEEHIVE 23453 daffodil 23;
+INSERT BEEHIVE 274563 sunflower 98;
+
+PRINT BEEHIVE;
+
+DESTROY HOUSE;
+
+PRINT CATALOG;
+
+MyRelation = PROJECT BEE_ID FROM BEEHIVE;
+PRINT MyRelation;
+DESTROY MyRelation;
+
+
+DESTROY BEEHIVE;
+
+PRINT BEEHIVE;
+
+PRINT CATALOG;
+
+DESTROY CATALOG;
+
+RELATION A (1 NUM 1);
+RELATION B (2 NUM 1);
+RELATION C (3 NUM 1);
+
+PRINT CATALOG;
+
+DESTROY A, B; # sees relation "A,", ignores B
+DESTROY A B; # sees relation "A", ignores B
+DESTROY B honeyhoneyhoneyhoneyhoneyhoneyhoneyhoneyhoneyhoneyhoneyhoneyhoneyhoney; # sees relation "B", ignores honey
+DESTROY C honey honey honey honey honey honey honey honey honey honey honey honey; # sees relation "C", ignores honey
+
+PRINT CATALOG;
+
+DESTROY;

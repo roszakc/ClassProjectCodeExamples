@@ -1,0 +1,39 @@
+**************************************
+| BEEHIVE                            |
+--------------------------------------
+| BEE_ID      | FLOWER      | HONEY  |
+--------------------------------------
+| 124         | tulip       | 3678   |
+| 23453       | daffodil    | 2373   |
+| 23          | daffodil    | 2373   |
+| 274563      | sunflower   | 98     |
+**************************************
+
+
+***************
+| MyRelation  |
+---------------
+| FLOWER      |
+---------------
+| tulip       |
+| daffodil    |
+| sunflower   |
+***************
+
+
+*****************************
+| MyRelation                |
+-----------------------------
+| FLOWER      | BEE_ID      |
+-----------------------------
+| tulip       | 124         |
+| daffodil    | 23453       |
+| daffodil    | 23          |
+| sunflower   | 274563      |
+*****************************
+
+
+Failed to run command for reason "illegal argument thrown in ProjectCommand: Attribute is not in target relation".
+	Command: MyRelation = PROJECT F FROM BEEHIVE;
+Failed to run command for reason "illegal argument thrown in ProjectCommand: relation does not exist".
+	Command: MyRelation = PROJECT FLOWER FROM B;

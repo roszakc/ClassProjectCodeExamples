@@ -1,0 +1,112 @@
+| APARTMENT                                |
+--------------------------------------------
+| PERSON_NAME   | ADDRESS                  |
+--------------------------------------------
+| CORBEN        | BEEWARE ROAD             |
+| CORBZZZN      | BZZZZZWARZZ ROAD         |
+********************************************
+
+
+*******************************************
+| BEEHIVE                                 |
+-------------------------------------------
+| BEE_ID      | FLOWER      | HONEY       |
+-------------------------------------------
+| 124         | tulip       | 3           |
+| 23453       | daffodil    | 23          |
+| 274563      | sunflower   | 98          |
+*******************************************
+
+
+***************
+| MyRelation  |
+---------------
+| BEE_ID      |
+---------------
+| 124         |
+| 23453       |
+| 274563      |
+***************
+
+
+Failed to run command for reason "illegal argument thrown in DeleteCommand: cannot delete from temporary relation".
+	Command: DELETE MyRelation;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: invalid syntax".
+	Command: DELETE HOUSE APARTMENT;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: invalid syntax".
+	Command: DELETE APARTMENT BEEHIVE;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: condition does not have 3 elements: AND".
+	Command: DELETE BEEHIVE WHERE HONEY < 20 AND FLOWER = SUNFLOWER;
+*******************************************
+| BEEHIVE                                 |
+-------------------------------------------
+| BEE_ID      | FLOWER      | HONEY       |
+-------------------------------------------
+| 124         | tulip       | 3           |
+| 23453       | daffodil    | 23          |
+| 274563      | sunflower   | 98          |
+*******************************************
+
+
+Failed to run command for reason "illegal argument thrown in DeleteCommand: condition does not have 3 elements: AND".
+	Command: DELETE BEEHIVE WHERE HONEY < 20 OR BEE_ID = 23453 AND FLOWER != sunflower;
+*******************************************
+| BEEHIVE                                 |
+-------------------------------------------
+| BEE_ID      | FLOWER      | HONEY       |
+-------------------------------------------
+| 124         | tulip       | 3           |
+| 23453       | daffodil    | 23          |
+| 274563      | sunflower   | 98          |
+*******************************************
+
+
+*******************************************
+| BEEHIVE                                 |
+-------------------------------------------
+| BEE_ID      | FLOWER      | HONEY       |
+-------------------------------------------
+*******************************************
+
+
+********************************************
+| APARTMENT                                |
+--------------------------------------------
+| PERSON_NAME   | ADDRESS                  |
+--------------------------------------------
+| CORBEN        | BEEWARE ROAD             |
+| CORBZZZN      | BZZZZZWARZZ ROAD         |
+********************************************
+
+
+Failed to run command for reason "illegal argument thrown in DeleteCommand: invalid syntax".
+	Command: DELETE APARTMENT WHERE;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: attribute not found in tuple: MY_NEW_FAKE_ATTRIBUTE".
+	Command: DELETE APARTMENT WHERE MY_NEW_FAKE_ATTRIBUTE = anything;
+********************************************
+| APARTMENT                                |
+--------------------------------------------
+| PERSON_NAME   | ADDRESS                  |
+--------------------------------------------
+| CORBZZZN      | BZZZZZWARZZ ROAD         |
+********************************************
+
+
+********************************************
+| CATALOG                                  |
+--------------------------------------------
+| RELATION                   | ATTRIBUTES  |
+--------------------------------------------
+| BEEHIVE                    | 3           |
+| APARTMENT                  | 2           |
+********************************************
+
+
+Failed to run command for reason "illegal argument thrown in DeleteCommand: cannot delete catalog".
+	Command: DELETE CATALOG;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: relation does not exist".
+	Command: DELETE NONBEES;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: invalid syntax".
+	Command: DELETE;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: invalid syntax".
+	Command: DELETE;

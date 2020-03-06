@@ -1,0 +1,38 @@
+Failed to run command for reason "illegal argument thrown in RelationCommand: relation already exists in the database".
+	Command: RELATION CATALOG (BUZZ CHAR 1);
+Failed to run command for reason "illegal argument thrown in RelationCommand: relation already exists in the database".
+	Command: RELATION BUZZALONG (BUZZ CHAR 1);
+Failed to run command for reason "illegal argument thrown in RelationCommand: relation already exists in the database".
+	Command: RELATION BUZZALONG (BEES NUM 10);
+Failed to run command for reason "illegal argument thrown in RelationCommand: invalid syntax".
+	Command: RELATION HIVE (BEES BUZZ 5);
+Failed to run command for reason "illegal argument thrown in RelationCommand: invalid syntax".
+	Command: RELATION HIVE (BEES NUM -5);
+Failed to run command for reason "illegal argument thrown in RelationCommand: multiple attributes with the same name".
+	Command: RELATION BEE_WAR (BEES NUM 8, BEES NUM 16);
+********************************************
+| CATALOG                                  |
+--------------------------------------------
+| RELATION                   | ATTRIBUTES  |
+--------------------------------------------
+| BUZZALONG                  | 1           |
+| BEE_WAR                    | 5           |
+| BEE_TEMPLATE               | 2           |
+********************************************
+
+
+*****************
+| MyRelation    |
+-----------------
+| NAME          |
+-----------------
+| tester        |
+*****************
+
+
+*********************************
+| MyRelation                    |
+---------------------------------
+| BEES      | KNEES             |
+---------------------------------
+*********************************

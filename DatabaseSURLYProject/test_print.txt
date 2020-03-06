@@ -1,0 +1,20 @@
+# testing for PRINT
+# problems tested: printing no relations, printing one relation, printing multiple relations,
+# printing the same relation multiple times, printing a relation that doesn't exist,
+# printing the catalog, printing an empty relation
+
+RELATION BEEHIVE(BEE_ID NUM 10, FLOWER CHAR 10, HONEY NUM 10);
+RELATION APARTMENT(PERSON_NAME CHAR 12, ADDRESS CHAR 23);
+INSERT APARTMENT CORBEN 'BEEWARE ROAD';
+INSERT BEEHIVE 124 tulip 3;
+INSERT BEEHIVE 23453 daffodil 23;
+INSERT BEEHIVE 274563 sunflower 98;
+RELATION BABY_BEES(NAME CHAR 12, AGE NUM 2);
+
+
+PRINT BEEHIVE, APARTMENT;
+PRINT BEEHIVE, BEEHIVE, APARTMENT, BEEHIVE;
+PRINT;
+PRINT BABY_BEES;
+PRINT HOUSE;
+PRINT CATALOG;

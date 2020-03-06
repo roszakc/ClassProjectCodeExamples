@@ -1,0 +1,40 @@
+Failed to run command for reason "illegal argument thrown in DeleteCommand: condition does not have 3 elements: OR".
+	Command: DELETE KING_OF_THE_BEES WHERE Name != 'Buzzbee' OR Salary <= 100000;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: condition does not have 3 elements: Or".
+	Command: DELETE HONEYCOMB WHERE all_the_honey_is_in_this_comb = TRUE Or honey_count < TRUE;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: condition does not have 3 elements: and".
+	Command: DELETE HONEY_COLLECTION_SITES WHERE ENVIRONMENT = 'SLIMEY' OR POLLENATION < 20 and MyNamesBuzzbee = FALSE;
+Failed to run command for reason "illegal argument thrown in DeleteCommand: condition does not have 3 elements: or".
+	Command: DELETE BEES_SOUNDS WHERE s1 = buzz or s2 = buzz and s3 = buzz and s4 = buzz or s5 = buzz or s6 = buzz and s7 = buzz or s8 = buzz;
+BEE_ID | BEE_ID
+*****************************************************************************************************************
+| THEBUZZ                                                                                                       |
+-----------------------------------------------------------------------------------------------------------------
+| BEEHIVE.BEE_ID  | BEEHIVE.FLOWER  | BEEHIVE.HONEY  | OTHERHIVE.BEE_ID  | OTHERHIVE.FLOWER  | OTHERHIVE.HONEY  |
+-----------------------------------------------------------------------------------------------------------------
+| 124             | tulip           | 3              | 124               | tulip             | 32               |
+| 23453           | daffodil        | 23             | 23453             | daffodil          | 233              |
+| 274563          | sunflower       | 98             | 274563            | sunflower         | 985              |
+*****************************************************************************************************************
+
+
+Failed to run command for reason "illegal argument thrown in DeleteCommand: cannot delete from temporary relation".
+	Command: DELETE THEBUZZ WHERE FLOWER = TULIP;
+*******************************************
+| BEEHIVE                                 |
+-------------------------------------------
+| BEE_ID      | FLOWER      | HONEY       |
+-------------------------------------------
+| 124         | tulip       | 3           |
+| 23453       | daffodil    | 23          |
+| 274563      | sunflower   | 98          |
+*******************************************
+
+
+*******************************************
+| BEEHIVE                                 |
+-------------------------------------------
+| BEE_ID      | FLOWER      | HONEY       |
+-------------------------------------------
+| 274563      | sunflower   | 98          |
+*******************************************
