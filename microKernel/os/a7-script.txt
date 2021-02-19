@@ -1,0 +1,571 @@
+Script started on 2020-03-11 17:30:30-0700
+roszakc@cf405-21:~/cs447/csci447_w20/os$ blitz -g -wait -raw os
+Beginning execution...
+====================  KPL PROGRAM STARTING  ====================
+Initializing Thread Scheduler...
+Initializing Process Manager...
+Initializing Thread Manager...
+Initializing Frame Manager...
+AllocateRandomFrames called.  NUMBER_OF_PHYSICAL_PAGE_FRAMES = 512
+Initializing Disk Driver...
+Initializing File Manager...
+Initializing Serial Driver... 
+Loading inital program...
+Opening 'stdin' and 'stdout'...
+Okay.
+Okay.
+This menu works best in raw mode.
+
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: 1
+
+==========  BasicSerialTest  ==========
+
+This test should be run in raw mode.
+
+Hit the "a" key.  Do not hit ENTER or RETURN...
+Returned value is correct.
+The buffer was updated correctly.
+
+Please type "abc".  Do not hit ENTER or RETURN...
+Returned value is correct.
+The buffer was updated correctly.
+
+Please type "hello".  Do not hit ENTER or RETURN...
+Returned value is correct.
+Returned value is correct.
+The buffer was updated correctly.
+
+Please type control-J.  Do not hit ENTER or RETURN...
+Returned value is correct.
+The buffer was updated correctly.
+
+Please type control-M.  Do not hit ENTER or RETURN...
+Returned value is correct.
+The buffer was updated correctly.
+
+Please type control-H.  Do not hit ENTER or RETURN...
+Returned value is correct.
+The buffer was updated correctly.
+
+Please type control-D.  Do not hit ENTER or RETURN...
+Returned value is correct.
+The buffer was not modified, as expected.
+
+==========  Test Complete  ==========
+
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: 2
+
+==========  KeyTest  ==========
+
+This test waits for a single character and then prints the value of that character.
+
+  1. Start by typing "abcABC123"
+  2. See what happens with characters like cntl-H (Backspace), cntl-J (NL) and cntl-M (CR).
+  3. See what happens when you hit keys labelled SPACE, ENTER/RETURN, TAB, DEL/BACKSPACE, ARROW KEYS and ESC.
+  4. See what happens when you hit cntl-D (EOF).
+  5. Try this test in cooked mode and in raw mode.
+
+This test will terminate when 'q' is typed.
+
+(To change to cooked mode, type control-C, "cooked", and "g" to resume execution.
+To change to raw mode, type control-C, ENTER, ENTER, "raw", and "g" to resume execution.)
+
+ch = 0x00000061 (decimal 97)
+ch = 0x00000062 (decimal 98)
+ch = 0x00000063 (decimal 99)
+
+
+*****  Control-C  *****
+
+Done!  The next instruction to execute will be:
+001138: 09000000       ret     
+
+
+Entering machine-level debugger...
+
+======================================================
+=====                                            =====
+=====         The BLITZ Machine Emulator         =====
+=====                                            =====
+=====  Copyright 2001-2007, Harry H. Porter III  =====
+=====                                            =====
+======================================================
+
+Enter a command at the prompt.  Type 'quit' to exit or 'help' for
+info about commands.
+> cooked
+Future terminal input will be "cooked".
+> g
+Beginning execution...
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+abcdefG
+ch = 0x00000061 (decimal 97)
+
+ch = 0x00000062 (decimal 98)
+
+ch = 0x00000063 (decimal 99)
+
+ch = 0x00000064 (decimal 100)
+
+ch = 0x00000065 (decimal 101)
+
+ch = 0x00000066 (decimal 102)
+
+ch = 0x00000047 (decimal 71)
+
+ch = 0x0000000A (decimal 10)
+
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+q
+ch = 0x00000071 (decimal 113)
+
+
+
+==========  Test Complete  ==========
+
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: 3
+
+==========  EchoTest  ==========
+
+This test reads characters from the terminal.  It echoes each character, as it is received.
+
+  1. Start by typing "abc\n"
+  2. See what happens with characters like cntl-H (Backspace), cntl-J (NL) and cntl-M (CR).
+  3. See what happens when you hit keys labelled SPACE, ENTER/RETURN, TAB, DEL/BACKSPACE, and ESC.
+  4. See what happens when you hit cntl-D (EOF).
+  5. Try this test in cooked mode and in raw mode.
+  6. While in raw mode, see what happens with sequences from page 342 in the textbook.
+     For example, try typing these sequences:
+         ESC  [  7  m
+         ESC  [  5  A
+         control-g
+         up-arrow
+
+This test will terminate when 'q' is typed.
+
+(To change to cooked mode, type control-C, "cooked", and "g" to resume execution.
+To change to raw mode, type control-C, ENTER, ENTER, "raw", and "g" to resume execution.)
+
+abc
+
+
+*****  WARNING: Returned value from Read is zero; This should only occur when control-D is typed
+
+
+*****  Control-C  *****
+
+Done!  The next instruction to execute will be:
+001138: 09000000       ret     
+> cooked
+Future terminal input will be "cooked".
+> g
+Beginning execution...
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+abc
+abc
+
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+hello
+hello
+
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+
+
+*****  EOF on input ignored: Use Control-C to halt execution  *****
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+
+^G
+
+
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+q
+q
+
+==========  Test Complete  ==========
+
+
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: 4
+
+==========  LineEchoTest  ==========
+
+This program reads an entire line of input (up to 30 characters) into a buffer.
+After this program gets the entire line, it prints it.  Since this program
+does not echo characters as typed, you will not see the characters until after
+the entire line is completed by typing ENTER, when running the emulator in raw
+mode.  In cooked mode, the host (Unix) will echo characters and then, after the
+line is complete, this program will (re) print the line.
+
+  1. Start by typing "abc\n"
+  2. See what happens with characters like cntl-H (Backspace), cntl-J (NL) and cntl-M (CR).
+  3. See what happens when you hit keys labelled SPACE, ENTER/RETURN, TAB, DEL/BACKSPACE, and ESC.
+  4. See what happens when you hit cntl-D (EOF).
+  5. See what happens when the size of the buffer is exceeded.
+  6. In cooked mode, see how the host (Unix) processes editing keys, such as backspace.
+
+This test will terminate when the first character entered is 'q'.
+
+(To change to cooked mode, type control-C, "cooked", and "g" to resume execution.
+To change to raw mode, type control-C, ENTER, ENTER, "raw", and "g" to resume execution.)
+
+
+Number of characters entered = 4
+abc
+
+
+*****  Control-C  *****
+
+Done!  The next instruction to execute will be:
+001138: 09000000       ret     
+> cooked
+Future terminal input will be "cooked".
+> g
+Beginning execution...
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+abcdef
+
+
+*****  Execution suspended on 'wait' instruction; waiting for additional user input  *****
+
+^C
+*****  Control-C  *****
+
+Done!  The next instruction to execute will be:
+001138: 09000000       ret     
+> raw
+Future terminal input will be "raw".
+> g
+Beginning execution...
+
+Number of characters entered = 15
+abcdef
+
+abcdef
+
+Number of characters entered = 2
+q
+
+==========  Test Complete  ==========
+
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: 5
+
+==========  EOFTest  ==========
+
+This test should be run in 'raw' mode.
+
+This function tests the handling of control-D.  Control-D is the
+enf-of-file character.  When typed, it should cause an immediate
+return from the Read syscall.  If no other characters have been
+typed first, then the count returned from Read will be zero, which
+many programs will interpret as 'end-of-file'.
+
+Please hit control-D next.  The ENTER key should not be necessary...
+Okay.
+Please type "abc" followed by control-D.  The ENTER key should not be necessary...
+Okay.
+
+==========  Test Complete  ==========
+
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: 6
+
+==========  OpenCloseTerminalTest  ==========
+
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Closing all 10 fileDescriptors...
+Opening '/dev/serial' 10 times...
+Attempting to open '/dev/serial' one more time, which should fail.
+The syscall correctly returns -1.
+Closing all 10 fileDescriptors...
+
+==========  Test Complete  ==========
+
+Okay.
+Okay.
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: 7
+
+==========  TerminalErrorTest  ==========
+
+(This test should be run in cooked mode.)
+Opening '/dev/serial' file...
+Reading with negative sizeInBytes...
+Okay.
+Okay.
+Reading with negative sizeInBytes...
+Okay.
+Okay.
+Reading with a pointer to a page which is read-only, which should be an error...
+Please type "abc\n" next.
+Okay.
+Reading with a pointer which isn't in our address space, which should be an error...
+Please type "xyz\n" next.
+Okay.
+Reading with a pointer which is near the end of our address space...
+Please type "123456\n" next.
+Okay.
+Reading with a pointer that crosses a page boundary...
+Please type "abcdef\n" next.
+Okay.
+Writing with negative sizeInBytes...
+Okay.
+Okay.
+Writing with negative sizeInBytes...
+Okay.
+Okay.
+Writing with a pointer that crosses a page boundary...
+
+
+==== This should print "GREETINGS" next ====
+                        GREETINGS
+Okay.
+Writing with a pointer to a page which is read-only, which should be okay...
+
+
+==== This should print "KERNEL CODE" next ====
+                        KERNEL CODE
+
+Writing with a pointer which isn't in our address space, which should be an error...
+Okay.
+Okay.
+
+==========  Test Complete  ==========
+
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: d
+Testing the Dup System call.
+Duplicating stdin!
+Okay.
+Type any character: 
+That was 'a'
+Testing Dup with a file.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Done testing Dup system call.
+
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: p
+Preparing pipe tests....
+Okay.
+Okay.
+code TestPr
+Pipe test one...
+Okay.
+Okay.
+Okay.
+Okay.
+Pipe test two...(may hang if you have a bug.)
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Pipe test three ... this may also hang
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Pipe test four ... this may also hang
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+****** Checking Errors *****
+Okay.
+Okay.
+Okay.
+Okay.
+Okay.
+Done with pipe tests.
+====================  MENU  ====================
+  1  -  BasicSerialTest
+  2  -  KeyTest
+  3  -  EchoTest
+  4  -  LineEchoTest
+  5  -  EOFTest
+  6  -  OpenCloseTerminalTest
+  7  -  TerminalErrorTest
+  d  -  Test the Dup system call
+  p  -  Test the Pipe system call
+  s  -  Shell
+  q  -  Quit
+Please select by number: q
+
+FATAL ERROR in userProgram: "Syscall 'Shutdown' was invoked by a user thread" -- TERMINATING!
+
+(To find out where execution was when the problem arose, type 'st' at the emulator prompt.)
+
+====================  KPL PROGRAM TERMINATION  ====================
+
+
+****  A 'debug' instruction was encountered  *****
+
+Done!  The next instruction to execute will be:
+001078: C0100000       sethi   0x0000,r1	! 0x00001088 = 4232 (noGoMessage)
+> q
+Number of Disk Reads    = 25
+Number of Disk Writes   = 0
+Instructions Executed   = 111036396
+Time Spent Sleeping     = 83975
+    Total Elapsed Time  = 111120371
+roszakc@cf405-21:~/cs447/csci447_w20/os$ exit
+exit
+
+Script done on 2020-03-11 17:34:39-0700
